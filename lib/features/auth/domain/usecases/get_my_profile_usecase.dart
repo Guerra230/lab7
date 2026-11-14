@@ -4,7 +4,6 @@ import 'package:moviles_auth/features/auth/domain/entities/profile.dart';
 import 'package:moviles_auth/features/auth/domain/repository/auth_repository.dart';
 import 'package:moviles_auth/features/auth/domain/repository/profile_repository.dart';
 
-/// Reads the user saved in the local session and brings their profile.
 class GetMyProfileUseCase {
   final AuthRepository _auth = AuthRepositoryImpl();
   final ProfileRepository _profiles = ProfileRepositoryImpl();

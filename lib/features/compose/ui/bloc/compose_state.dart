@@ -2,7 +2,6 @@ import 'package:moviles_auth/features/avatar/domain/entities/picked_photo.dart';
 
 enum ComposeStatus { initial, loading, success, failure }
 
-/// Single state of the compose screen: the attached photo and which moment it is.
 class ComposeState {
   final ComposeStatus status;
   final PickedPhoto? photo;

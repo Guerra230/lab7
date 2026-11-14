@@ -1,7 +1,5 @@
-/// Something the register screen asks the RegisterBloc to do.
 abstract class RegisterEvent {}
 
-/// The user submitted the sign up form.
 class RegisterSubmitted extends RegisterEvent {
   final String username;
   final String fullName;

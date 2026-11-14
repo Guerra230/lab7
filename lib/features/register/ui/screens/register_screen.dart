@@ -8,7 +8,6 @@ import 'package:moviles_auth/features/register/ui/bloc/register_event.dart';
 import 'package:moviles_auth/features/register/ui/bloc/register_state.dart';
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// Sign up form with username, full name, email and password.
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 

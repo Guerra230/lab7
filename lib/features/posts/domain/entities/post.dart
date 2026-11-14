@@ -1,4 +1,3 @@
-/// A post of the wall, with its author, its image and its likes already resolved.
 class Post {
   final String id;
   final String content;

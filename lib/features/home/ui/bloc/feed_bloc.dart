@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moviles_auth/features/auth/domain/usecases/get_my_profile_usecase.dart';
+import 'package:moviles_auth/features/avatar/domain/usecases/change_avatar_usecase.dart';
 import 'package:moviles_auth/features/auth/domain/usecases/sign_out_usecase.dart';
 import 'package:moviles_auth/features/home/ui/bloc/feed_event.dart';
 import 'package:moviles_auth/features/home/ui/bloc/feed_state.dart';
@@ -9,7 +9,6 @@ import 'package:moviles_auth/features/posts/domain/usecases/get_feed_usecase.dar
 import 'package:moviles_auth/features/posts/domain/usecases/get_my_posts_usecase.dart';
 import 'package:moviles_auth/features/posts/domain/usecases/toggle_like_usecase.dart';
 
-/// Loads the profile and the wall, toggles likes, changes the photo and signs out.
 class FeedBloc extends Bloc<FeedEvent, FeedState> {
   static const pageSize = 10;
   final GetMyProfileUseCase _getMyProfile = GetMyProfileUseCase();
@@ -17,6 +16,7 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
   final GetFeedUseCase _getFeed = GetFeedUseCase();
   final GetMyPostsUseCase _getMyPosts = GetMyPostsUseCase();
   final ToggleLikeUseCase _toggleLike = ToggleLikeUseCase();
+  final ChangeAvatarUseCase _changeAvatar = ChangeAvatarUseCase();
 
   FeedBloc() : super(const FeedState()) {
     on<ProfileRequested>(_onProfileRequested);
@@ -101,7 +101,23 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     AvatarChangeRequested event,
     Emitter<FeedState> emit,
   ) async {
-    debugPrint('FeedBloc recibió $event');
+    emit(state.copyWith(avatarStatus: AvatarStatus.uploading));
+    try {
+      final profile = await _changeAvatar();
+      if (profile == null) {
+        emit(state.copyWith(avatarStatus: AvatarStatus.idle));
+        return;
+      }
+      emit(state.copyWith(profile: profile, avatarStatus: AvatarStatus.idle));
+      add(FeedStarted());
+    } on Exception catch (e) {
+      emit(
+        state.copyWith(
+          avatarStatus: AvatarStatus.failure,
+          errorMessage: _message(e),
+        ),
+      );
+    }
   }
 
   Future<void> _onProfileRequested(

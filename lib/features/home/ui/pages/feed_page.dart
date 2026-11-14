@@ -4,7 +4,6 @@ import 'package:moviles_auth/features/home/ui/components/post_card.dart';
 import 'package:moviles_auth/features/posts/domain/entities/post.dart';
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// The wall: every post, newest first, and the Mostrar más button.
 class FeedPage extends StatelessWidget {
   final List<Post> posts;
   final bool hasMore;

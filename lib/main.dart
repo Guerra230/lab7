@@ -21,7 +21,6 @@ Future<void> main() async {
   runApp(const App());
 }
 
-/// Root widget that declares the theme and the named routes.
 class App extends StatelessWidget {
   const App({super.key});
 

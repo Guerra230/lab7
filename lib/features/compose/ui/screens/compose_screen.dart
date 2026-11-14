@@ -8,7 +8,6 @@ import 'package:moviles_auth/features/compose/ui/bloc/compose_event.dart';
 import 'package:moviles_auth/features/compose/ui/bloc/compose_state.dart';
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// Writes a new post, with an optional photo, and goes back to the wall once it is published.
 class ComposeScreen extends StatefulWidget {
   const ComposeScreen({super.key});
 
@@ -38,7 +37,8 @@ class _ComposeScreenState extends State<ComposeScreen> {
     final photo = state.photo;
     if (photo == null) {
       return OutlinedButton.icon(
-        onPressed: () {},
+        onPressed: () =>
+            context.read<ComposeBloc>().add(ComposePhotoRequested()),
         icon: const Icon(Icons.add_photo_alternate_outlined),
         label: const Text('Agregar foto'),
       );

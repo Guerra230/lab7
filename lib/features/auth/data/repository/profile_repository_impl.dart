@@ -2,7 +2,6 @@ import 'package:moviles_auth/features/auth/data/source/supabase_profile_data_sou
 import 'package:moviles_auth/features/auth/domain/entities/profile.dart';
 import 'package:moviles_auth/features/auth/domain/repository/profile_repository.dart';
 
-/// Fulfils ProfileRepository by delegating on the Supabase data source.
 class ProfileRepositoryImpl implements ProfileRepository {
   final SupabaseProfileDataSource _dataSource = SupabaseProfileDataSource();
 
@@ -17,7 +16,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
   }
 
   @override
-  Future<void> updateAvatarPath(String id, String path) async {
-    throw UnimplementedError();
+  Future<void> updateAvatarPath(String id, String path) {
+    return _dataSource.updateAvatarPath(id, path);
   }
 }

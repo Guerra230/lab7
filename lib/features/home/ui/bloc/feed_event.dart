@@ -1,9 +1,7 @@
 import 'package:moviles_auth/features/posts/domain/entities/post.dart';
 
-/// Something the home screen asks the FeedBloc to do.
 abstract class FeedEvent {}
 
-/// Load the profile of the signed in user.
 class ProfileRequested extends FeedEvent {
   @override
   String toString() {
@@ -11,7 +9,6 @@ class ProfileRequested extends FeedEvent {
   }
 }
 
-/// The user pressed Cerrar sesión.
 class SignOutRequested extends FeedEvent {
   @override
   String toString() {
@@ -19,7 +16,6 @@ class SignOutRequested extends FeedEvent {
   }
 }
 
-/// Load the wall from page 0, and the latest posts of the user.
 class FeedStarted extends FeedEvent {
   @override
   String toString() {
@@ -27,7 +23,6 @@ class FeedStarted extends FeedEvent {
   }
 }
 
-/// Load the next page of the wall.
 class FeedMoreRequested extends FeedEvent {
   @override
   String toString() {
@@ -35,7 +30,6 @@ class FeedMoreRequested extends FeedEvent {
   }
 }
 
-/// The user touched the heart of a post.
 class FeedLikeToggled extends FeedEvent {
   final Post post;
 
@@ -47,7 +41,6 @@ class FeedLikeToggled extends FeedEvent {
   }
 }
 
-/// The user wants a new profile photo from the gallery.
 class AvatarChangeRequested extends FeedEvent {
   @override
   String toString() {

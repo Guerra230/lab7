@@ -5,7 +5,6 @@ enum FeedStatus { initial, loading, success, failure }
 
 enum AvatarStatus { idle, uploading, failure }
 
-/// Single state of the home: the profile, its photo, the wall and the latest posts.
 class FeedState {
   final FeedStatus status;
   final Profile? profile;

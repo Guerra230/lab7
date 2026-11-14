@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Color palette shared by the whole app.
 class AppColors {
   static const Color primary = Color(0xFF3ECF8E);
   static const Color primaryDark = Color(0xFF1F9D68);

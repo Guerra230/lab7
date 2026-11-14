@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// Round photo of a person, or their initial while there is no photo.
 class Avatar extends StatelessWidget {
   final String? url;
   final String name;

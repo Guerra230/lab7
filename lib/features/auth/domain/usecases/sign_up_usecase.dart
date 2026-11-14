@@ -4,7 +4,6 @@ import 'package:moviles_auth/features/auth/domain/entities/profile.dart';
 import 'package:moviles_auth/features/auth/domain/repository/auth_repository.dart';
 import 'package:moviles_auth/features/auth/domain/repository/profile_repository.dart';
 
-/// Creates the account and then saves its profile with the same id.
 class SignUpUseCase {
   final AuthRepository _auth = AuthRepositoryImpl();
   final ProfileRepository _profiles = ProfileRepositoryImpl();

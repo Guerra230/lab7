@@ -8,7 +8,6 @@ import 'package:moviles_auth/features/login/ui/bloc/login_event.dart';
 import 'package:moviles_auth/features/login/ui/bloc/login_state.dart';
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// Sign in form with email and password.
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 

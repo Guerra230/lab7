@@ -4,7 +4,6 @@ import 'package:moviles_auth/features/auth/domain/entities/profile.dart';
 import 'package:moviles_auth/features/auth/domain/repository/auth_repository.dart';
 import 'package:moviles_auth/features/auth/domain/repository/profile_repository.dart';
 
-/// Opens a session and then reads the profile of that account.
 class SignInUseCase {
   final AuthRepository _auth = AuthRepositoryImpl();
   final ProfileRepository _profiles = ProfileRepositoryImpl();

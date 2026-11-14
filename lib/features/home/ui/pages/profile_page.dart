@@ -7,7 +7,6 @@ import 'package:moviles_auth/features/home/ui/components/post_card.dart';
 import 'package:moviles_auth/features/posts/domain/entities/post.dart';
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// The profile of the signed in user, their photo and their latest posts.
 class ProfilePage extends StatelessWidget {
   final Profile profile;
   final List<Post> posts;

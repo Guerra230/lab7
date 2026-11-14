@@ -7,7 +7,6 @@ import 'package:moviles_auth/features/home/ui/bloc/feed_state.dart';
 import 'package:moviles_auth/features/home/ui/pages/feed_page.dart';
 import 'package:moviles_auth/features/home/ui/pages/profile_page.dart';
 
-/// Hosts FeedPage and ProfilePage behind a BottomNavigationBar.
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -46,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         profile: profile,
         posts: state.myPosts,
         isUploading: state.avatarStatus == AvatarStatus.uploading,
-        onChangePhoto: () {},
+        onChangePhoto: () => bloc.add(AvatarChangeRequested()),
         onLike: (post) => bloc.add(FeedLikeToggled(post)),
         onSignOut: () => bloc.add(SignOutRequested()),
       );

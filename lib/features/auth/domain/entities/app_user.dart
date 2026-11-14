@@ -1,4 +1,3 @@
-/// Account returned by Supabase Auth: its id and its email.
 class AppUser {
   final String id;
   final String email;

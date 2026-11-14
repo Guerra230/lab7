@@ -1,7 +1,6 @@
 import 'package:moviles_auth/features/auth/domain/entities/app_user.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-/// The only file that talks to Supabase Auth.
 class SupabaseAuthDataSource {
   final SupabaseClient _client = Supabase.instance.client;
 

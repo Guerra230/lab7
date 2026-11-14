@@ -2,7 +2,6 @@ import 'package:moviles_auth/features/posts/data/repository/post_repository_impl
 import 'package:moviles_auth/features/posts/domain/entities/post.dart';
 import 'package:moviles_auth/features/posts/domain/repository/post_repository.dart';
 
-/// Gives or removes the like of the signed in user on a post.
 class ToggleLikeUseCase {
   final PostRepository _posts = PostRepositoryImpl();
 

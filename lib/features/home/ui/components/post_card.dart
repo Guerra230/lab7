@@ -4,7 +4,6 @@ import 'package:moviles_auth/components/avatar.dart';
 import 'package:moviles_auth/features/posts/domain/entities/post.dart';
 import 'package:moviles_auth/theme/app_theme.dart';
 
-/// Card of one post: author with photo, text, image, date and the heart with its counter.
 class PostCard extends StatelessWidget {
   final Post post;
   final Function() onLike;

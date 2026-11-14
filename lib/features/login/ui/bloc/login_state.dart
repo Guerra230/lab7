@@ -2,7 +2,6 @@ import 'package:moviles_auth/features/auth/domain/entities/profile.dart';
 
 enum LoginStatus { initial, loading, success, failure }
 
-/// Single state of the login screen; status says which moment it is.
 class LoginState {
   final LoginStatus status;
   final Profile? profile;
